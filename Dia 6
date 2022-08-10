@@ -1,0 +1,61 @@
+let frutas = [];
+let laticínios = [];
+let congelados = [];
+let doces = [];
+    
+    do
+      {
+      produto=prompt("Deseja adicionar algo a lista de compras? Digite Sim ou Não");
+        {if (produto=="Não")
+          continue;
+          else if (produto!="Sim" && produto!="Não")
+            alert("Digite Sim ou Não");
+        }
+      comida=prompt("Qual comida você deseja adicionar?");
+        do
+          {categoria=prompt("Em qual categoria " + comida + " se insere? 1-Frutas, 2-Latícinios, 3-Congelados, 4-Doces");
+            if (categoria=="1")
+                frutas.push(comida);
+              else if 
+                (categoria=="2")
+                laticínios.push(comida);
+              else if 
+                (categoria=="3")
+                congelados.push(comida);
+              else if (categoria=="4")
+                doces.push(comida);
+              else
+                alert("Digite uma categoria válida")
+          }    
+        while (categoria!="1" && categoria!="2" && categoria!="3" && categoria!="4") 
+      }
+      while (produto=="Sim")
+
+console.log("Frutas: " + frutas, "Latícinios: " + laticínios, "Congelados: " + congelados, "Doces: " + doces);
+
+          do
+            {
+            retirar=prompt("Deseja retirar algum item da lista? Digite Sim ou Não");
+              if (retirar=="Não"){
+                break;
+              }
+                itemRetirar=prompt("Qual item deseja retirar?");
+                  let posFrutas = frutas.indexOf(itemRetirar)
+                  let posLaticínios = laticínios.indexOf(itemRetirar)
+                  let posCongelados = congelados.indexOf(itemRetirar)
+                  let posDoces = doces.indexOf(itemRetirar)
+                if (frutas.includes(itemRetirar)==true)
+                  frutas.splice(posFrutas, 1);
+                else if (laticínios.includes(itemRetirar)==true)
+                  laticínios.splice(posLaticínios, 1);
+                else if (congelados.includes(itemRetirar)==true)
+                  congelados.splice(posCongelados, 1);
+                else if (doces.includes(itemRetirar)==true)
+                  doces.splice(posDoces, 1);
+                else  
+                  alert("Item não encontrado");
+
+            }
+          while (retirar="Sim")
+
+console.log("Frutas: " + frutas, "Latícinios: " + laticínios, "Congelados: " + congelados, "Doces: " + doces);
